@@ -808,6 +808,23 @@ _meta_comp()
 }
 
 
+
+function bclock()
+{
+  while [[ 1 ]];
+  do 
+    clear;
+    banner `date +%H:%M:%S`;
+    sleep 1;
+  done
+}
+
+function bin_clock()
+{
+  watch -n 1 'echo "obase=2;`date +%s`" | bc'
+}
+
+
 complete -o default -F _meta_comp nohup \
 eval exec trace truss strace sotruss gdb
 complete -o default -F _meta_comp command type which man nice time

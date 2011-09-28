@@ -27,6 +27,22 @@ set wildmenu
 set visualbell
 set cindent
 set pastetoggle=<F5>
+set ai                  " Auto indent
+set si                  " Smart indent
+set so=7
+
+" Mapleader
+let mapleader = ","
+let g:mapleader = ","
+
+" Fast saving
+nmap <leader>w :w!<cr>
+
+" Fast editing of the .vimrc
+map <leader>e :e ~/.vimrc<cr>
+
+" When vimrc is edited, reloat it
+autocmd! bufwritepost vimrc source ~/.vimrc
 
 
 filetype on
@@ -58,3 +74,7 @@ let g:p4CmdPath='~/scripts/p4'
 " Makefiles
 map <f9> :make
 "set makeprg
+
+" Moving around, tabs and buffers
+" -------------------------------
+map <space> /
