@@ -1,0 +1,2 @@
+#!/bin/bash
+p4 opened | sed 's/\#..*//'

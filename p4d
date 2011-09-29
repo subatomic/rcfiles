@@ -1,0 +1,6 @@
+#!/bin/bash
+FILE=P4D_${P4CLIENT}
+EXT=`date +%Y-%m-%d-%T`
+echo "Generating P4 diff for ${P4CLIENT}"
+p4 diff | tee ${FILE}_${EXT}.diff
+echo "Results in ${FILE}_${EXT}.diff"

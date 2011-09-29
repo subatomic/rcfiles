@@ -1,0 +1,4 @@
+#!/bin/bash
+FILE=P4D_${P4CLIENT}
+echo "Removing all P4 diff files"
+rm ${FILE}*.diff
