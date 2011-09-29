@@ -1,0 +1,43 @@
+#!/bin/bash
+
+
+if [ $# -lt 1 ]; then
+    echo "Usage: $0 band(g/a)"
+    exit
+fi
+
+BAND=$1
+
+function show_11g() {
+    more /home/karthi/scripts/11gchannels
+}
+
+
+function show_11a() {
+    more /home/karthi/scripts/11achannels_ext
+}
+
+function show_ht20() {
+    more /home/karthi/scripts/11an_ht20_channels
+}
+
+function show_ht40() {
+    more /home/karthi/scripts/11an_ht40_channels
+}
+
+function show_channels() {
+    if [ ${BAND} == "a" ]; then
+        show_11a
+    elif [ ${BAND} == "g" ]; then
+        show_11g
+    elif [ ${BAND} == "ht20" ]; then
+        show_ht20
+    elif [ ${BAND} == "ht40" ]; then
+        show_ht40
+    else
+        echo "Usage: $0 band(g/a) or (ht20/ht40)"
+        exit
+    fi
+}
+
+show_channels
