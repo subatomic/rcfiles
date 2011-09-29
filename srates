@@ -1,0 +1,32 @@
+#!/bin/bash
+
+
+if [ $# -lt 1 ]; then
+    echo "Usage: $0 gaurd_interval (800/400) ns"
+    exit
+fi
+
+GAURD_INTERVAL=$1
+
+function show_rates_800ns() {
+    more /home/karthi/scripts/rates_gi_800
+}
+
+
+function show_rates_400ns() {
+    more /home/karthi/scripts/rates_gi_400
+}
+
+
+function show_rates() {
+    if [ ${GAURD_INTERVAL} == "400" ]; then
+        show_rates_400ns
+    elif [ ${GAURD_INTERVAL} == "800" ]; then
+        show_rates_800ns
+    else
+        echo "Usage: $0 gaurd_interval (400/800)"
+        exit
+    fi
+}
+
+show_rates
