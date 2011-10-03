@@ -842,7 +842,7 @@ function sp4client()
 function swdir()
 {
     PDIR=$(basename $(pwd))
-    export WORKDIR=${WORKDIR}
+    export WORKDIR=${PDIR}
     echo ${WORKDIR}
 }
 
@@ -850,7 +850,7 @@ function spwdir()
 {
 
     PDIR=$(basename $(pwd))
-    export PWORKDIR=${WORKDIR}
+    export PWORKDIR=${PDIR}
     echo ${PWORKDIR}
 }
 
