@@ -827,6 +827,19 @@ function bin_clock()
   watch -n 1 'echo "obase=2;`date +%s`" | bc'
 }
 
+# Set the P4CLIENT path to pwd
+function sp4client()
+{
+    # Other tricks
+    # endpath=$(basename $(pwd))
+    # pwd | sed 's#.*/##'
+
+    P4PATH=$(basename $(pwd))
+    export P4CLIENT=${P4PATH}
+    echo ${P4CLIENT}
+}
+
+
 
 complete -o default -F _meta_comp nohup \
 eval exec trace truss strace sotruss gdb
