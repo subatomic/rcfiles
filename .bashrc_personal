@@ -839,6 +839,21 @@ function sp4client()
     echo ${P4CLIENT}
 }
 
+function swdir()
+{
+    PDIR=$(basename $(pwd))
+    export WORKDIR=${WORKDIR}
+    echo ${WORKDIR}
+}
+
+function spwdir()
+{
+
+    PDIR=$(basename $(pwd))
+    export PWORKDIR=${WORKDIR}
+    echo ${PWORKDIR}
+}
+
 
 
 complete -o default -F _meta_comp nohup \
