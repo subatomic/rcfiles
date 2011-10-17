@@ -254,7 +254,7 @@ alias tree='tree -Csu'     # nice alternative to 'recursive ls'
 #-------------------------------------------------------------
 
 alias more='less'
-export PAGER=less
+export PAGER=more
 export LESSCHARSET='latin1'
 export LESSOPEN='|/usr/bin/lesspipe.sh %s 2>&-'
    # Use this if lesspipe.sh exists
@@ -855,6 +855,7 @@ function spwdir()
 }
 
 
+export TFTPPATH=/tftpboot/karthi
 
 complete -o default -F _meta_comp nohup \
 eval exec trace truss strace sotruss gdb
